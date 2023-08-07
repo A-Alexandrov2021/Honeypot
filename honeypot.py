@@ -12,7 +12,7 @@ dlgs = client.get_dialogs()
 
 class MyEventHandler(pyinotify.ProcessEvent):
     def send_alarm_message(self, event_type):
-        client.send_message('Black Christmas', f"ALERT! A file operation of type {event_type} was detected in the monitored directory!")
+        client.send_message('Black Christmas', "ALERT! A file operation of type {} was detected in the monitored directory!".format(event_type))
 
     def process_IN_ACCESS(self, event):
         self.send_alarm_message("IN_ACCESS")
